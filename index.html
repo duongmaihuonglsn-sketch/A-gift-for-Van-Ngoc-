@@ -1,1 +1,414 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Vân Ngọc ♡ Thanh Tùng</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #faf8f5;
+    color: #403a36;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* ===== TRANG MỞ ĐẦU ===== */
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    filter: brightness(0.78);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.03),
+            rgba(0,0,0,0.10) 45%,
+            rgba(0,0,0,0.65)
+        );
+}
+
+.cover {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 30px 22px 60px;
+    animation: appear 1.5s ease;
+}
+
+.small-title {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    opacity: 0.9;
+}
+
+h1 {
+    font-size: clamp(38px, 9vw, 70px);
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin: 0 0 12px;
+}
+
+.subtitle {
+    font-size: 17px;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.open-button {
+    display: inline-block;
+    padding: 14px 30px;
+    border: 1px solid rgba(255,255,255,0.8);
+    border-radius: 50px;
+    color: white;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.open-button:hover {
+    background: rgba(255,255,255,0.25);
+    transform: scale(1.03);
+}
+
+/* ===== NỘI DUNG ===== */
+
+.content {
+    display: none;
+    max-width: 760px;
+    margin: auto;
+    padding: 75px 24px 90px;
+    text-align: center;
+}
+
+.content.show {
+    display: block;
+    animation: fadeUp 1s ease;
+}
+
+.label {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #a09287;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 34px;
+    font-weight: 400;
+    margin: 0 0 28px;
+}
+
+/* ===== LỜI CHÚC ===== */
+
+.letter {
+    background: white;
+    border-radius: 22px;
+    padding: 32px;
+    text-align: left;
+    font-size: 17px;
+    line-height: 2;
+    box-shadow: 0 10px 35px rgba(70,50,40,0.08);
+}
+
+/* ===== NHẠC ===== */
+
+.music {
+    margin-top: 65px;
+}
+
+.music-card {
+    background: white;
+    border-radius: 22px;
+    padding: 22px;
+    box-shadow: 0 10px 35px rgba(70,50,40,0.08);
+}
+
+.music-card iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 15px;
+}
+
+.music-note {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    color: #9a918b;
+    margin-top: 12px;
+}
+
+/* ===== KẾT ===== */
+
+.closing {
+    margin-top: 70px;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.9;
+}
+
+.names {
+    margin-top: 25px;
+    font-size: 27px;
+    font-style: normal;
+}
+
+.footer {
+    margin-top: 60px;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #aaa19b;
+}
+
+/* ===== HIỆU ỨNG ===== */
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== ĐIỆN THOẠI ===== */
+
+@media (max-width: 600px) {
+
+    .hero img {
+        object-position: center 30%;
+    }
+
+    .cover {
+        padding-bottom: 50px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+    }
+
+    .letter {
+        padding: 25px;
+        font-size: 16px;
+    }
+
+    .content {
+        padding-top: 55px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- ============================= -->
+<!-- MÀN HÌNH MỞ ĐẦU -->
+<!-- ============================= -->
+
+<section class="hero">
+
+    <!-- ẢNH CƯỚI -->
+    <img src="wedding.jpg" alt="Vân Ngọc và Thanh Tùng">
+
+    <div class="overlay"></div>
+
+    <div class="cover">
+
+        <div class="small-title">
+            A LITTLE GIFT FOR YOUR FOREVER
+        </div>
+
+        <h1>
+            Vân Ngọc ♡ Thanh Tùng
+        </h1>
+
+        <div class="subtitle">
+            Một món quà nhỏ dành cho ngày đặc biệt của hai bạn
+        </div>
+
+        <div class="open-button" onclick="openGift()">
+            MỞ MÓN QUÀ ♡
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================= -->
+<!-- NỘI DUNG -->
+<!-- ============================= -->
+
+<main id="content" class="content">
+
+    <!-- LỜI CHÚC -->
+
+    <div class="label">
+        A LETTER FOR YOU
+    </div>
+
+    <h2>
+        Gửi Vân Ngọc & Thanh Tùng
+    </h2>
+
+
+    <div class="letter">
+
+        Chúc mừng hạnh phúc nha Ngọc nhaaa! ❤️
+        <br><br>
+
+        Tương lai và sau này, mong m và chồng sẽ luôn thật
+        hạnh phúc, luôn đồng hành cùng nhau trong mọi chặng
+        đường của cuộc sống.
+        <br><br>
+
+        Mong nụ cười sẽ luôn trên môi m, và những giọt nước mắt
+        nếu có cũng chỉ là những giọt nước mắt của hạnh phúc.
+        <br><br>
+
+        Mong hai bạn sẽ luôn yêu thương, bao dung và lựa chọn
+        nhau, không chỉ trong những ngày đẹp nhất mà cả trong
+        những ngày bình thường nhất của cuộc sống.
+        <br><br>
+
+        Chúc cho hành trình phía trước của hai bạn thật nhiều
+        bình an, thật nhiều tiếng cười và thật nhiều những
+        khoảnh khắc đáng nhớ.
+        <br><br>
+
+        Một đời này, mong hai bạn vẫn sẽ luôn nắm tay nhau
+        thật chặt nhé! ❤️
+
+    </div>
+
+
+    <!-- NHẠC -->
+
+    <section class="music">
+
+        <div class="label">
+            A SONG FOR YOU
+        </div>
+
+        <h2>
+            Beautiful in White
+        </h2>
+
+        <div class="music-card">
+
+            <iframe
+                src="https://www.youtube.com/embed/0eDHYYmjbWU"
+                title="Beautiful In White - Shane Filan"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+            <div class="music-note">
+                Beautiful in White · Shane Filan
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LỜI KẾT -->
+
+    <section class="closing">
+
+        May your forever be as beautiful
+        as this moment. 🤍
+
+        <div class="names">
+            Vân Ngọc ♡ Thanh Tùng
+        </div>
+
+    </section>
+
+
+    <div class="footer">
+        MADE WITH LOVE · FOR YOUR FOREVER
+    </div>
+
+</main>
+
+
+<script>
+
+function openGift() {
+
+    const content = document.getElementById("content");
+
+    content.classList.add("show");
+
+    setTimeout(function() {
+
+        content.scrollIntoView({
+            behavior: "smooth"
+        });
+
+    }, 150);
+
+}
+
+</script>
+
+</body>
+</html>
